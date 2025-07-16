@@ -1,0 +1,19 @@
+
+<svg width="300" height="100" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    .code-text { font-family: 'Segoe UI', sans-serif; font-size: 50px; font-weight: bold; }
+    .primary { fill: #0f172a; }
+    .accent { fill: #f97316; }
+  </style>
+  <g>
+    <!-- Code brackets -->
+    <text x="20" y="120" class="code-text primary">&lt;</text>
+    <text x="70" y="120" class="code-text accent">/</text>
+    <text x="110" y="120" class="code-text primary">&gt;</text>
+
+    <!-- Logo text -->
+    <text x="160" y="120" class="code-text primary">Code</text>
+    <text x="310" y="120" class="code-text accent">2</text>
+    <text x="345" y="120" class="code-text primary">Career</text>
+  </g>
+</svg>
