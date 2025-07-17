@@ -1,23 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/AppContext'
 
 const Hero = () => {
-
-    const {setSearchFilter, setIsSearched} = useContext(AppContext);
+    
+    const {setSearchFilter, setIsSearched} = useContext(AppContext)
 
     const titleRef = useRef(null)
     const locationRef = useRef(null)
 
-    const onSearch = () => {
+    const onSearch = () =>{
         setSearchFilter({
             title: titleRef.current.value,
             location: locationRef.current.value
         })
         setIsSearched(true)
-        console.log({title: titleRef.current.value,
-            location: locationRef.current.value});
-        
     }
 
   return (
@@ -28,14 +25,11 @@ const Hero = () => {
         <div className='flex items-center justify-between bg-white rounded text-gray-600 mx-w-xl pl-4 mx-4 sm:mx-auto'>
             <div className='flex items-center'>
                 <img className='h-4 sm:h-5' src={assets.search_icon} alt='Search-icon' />
-                <input type="text" placeholder='Search for Jobs' className='max-sm:text-xs p-2 rounded outline-none w-full' 
-                ref={titleRef}
-                />
+                <input type="text" placeholder='Search for Jobs' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={titleRef} />
             </div>
             <div className='flex items-center'>
                 <img className='h-4 sm:h-5' src={assets.location_icon} alt='location-icon' />
-                <input type="text" placeholder='Location' className='max-sm:text-xs p-2 rounded outline-none w-full ' 
-                ref={locationRef}/>
+                <input type="text" placeholder='Location' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={locationRef} />
             </div>
             <button onClick={onSearch} className='bg-blue-600 px-6 py-2 rounded text-white m-1 cursor-pointer'>Search</button>
         </div>
