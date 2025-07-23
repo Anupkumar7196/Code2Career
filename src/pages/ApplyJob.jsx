@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
-import { jobsData } from '../assets/assets';
+import { assets, jobsData } from '../assets/assets';
 import Loading from '../components/Loading';
 import Navbar from '../components/Navbar';
+import kconvert from 'k-convert';
 const ApplyJob = () => {
 
   const {id} = useParams();
@@ -29,6 +30,36 @@ const ApplyJob = () => {
   return JobData ? (
     <>
       <Navbar/>
+      <div>
+        <div>
+          <div>
+            <div>
+              <img src={JobData.companyId.image} alt="" />
+              <div>
+                <h1>{JobData.title}</h1>
+                <div>
+                  <span>
+                    <img src={assets.suitcase_icon} alt="" />
+                    {JobData.companyId.name}
+                  </span>
+                  <span>
+                    <img src={assets.location_icon} alt="" />
+                    {JobData.location}
+                  </span>
+                  <span>
+                    <img src={assets.person_icon} alt="" />
+                    {JobData.level}
+                  </span>
+                  <span>
+                    <img src={assets.money_icon} alt="" />
+                    CTC: {kconvert.convertTo(JobData.salary)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   ) : (
     <Loading/>
