@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
 import { jobsData } from '../assets/assets';
 import Loading from '../components/Loading';
+import Navbar from '../components/Navbar';
 const ApplyJob = () => {
 
   const {id} = useParams();
@@ -25,10 +26,10 @@ const ApplyJob = () => {
     }
   },[id, jobs])
 
-  return Jobata ? (
-    <div>
-      
-    </div>
+  return JobData ? (
+    <>
+      <Navbar/>
+    </>
   ) : (
     <Loading/>
   )
