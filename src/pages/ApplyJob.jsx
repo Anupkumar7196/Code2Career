@@ -5,6 +5,7 @@ import { assets, jobsData } from '../assets/assets';
 import Loading from '../components/Loading';
 import Navbar from '../components/Navbar';
 import kconvert from 'k-convert';
+import moment from 'moment';
 const ApplyJob = () => {
 
   const {id} = useParams();
@@ -57,6 +58,12 @@ const ApplyJob = () => {
                 </div>
               </div>
             </div>
+
+            <div>
+              <button>Apply Now</button>
+              <p>Posted {moment(JobData.date).fromNow()}</p>
+            </div>
+
           </div>
         </div>
       </div>
