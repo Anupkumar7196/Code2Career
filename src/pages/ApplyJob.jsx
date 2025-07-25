@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import Navbar from '../components/Navbar';
 import kconvert from 'k-convert';
 import moment from 'moment';
+import JobCard from '../components/JobCard';
 const ApplyJob = () => {
 
   const {id} = useParams();
@@ -60,7 +61,7 @@ const ApplyJob = () => {
             </div>
 
             <div className='flex flex-col justify-center text-end text-sm max-md:mx-auto max-md:text-center'>
-              <button className='bg-blue-600 px-8 text-white rounded'>Apply Now</button>
+              <button className='bg-blue-600 px-8 text-white rounded cursor-pointer'>Apply Now</button>
               <p className='mt-1 text-gray-600'>Posted {moment(JobData.date).fromNow()}</p>
             </div>
 
@@ -70,7 +71,12 @@ const ApplyJob = () => {
         <div className='w-full lg:w-2/3'>
           <h2 className='font-bold text-2xl mb-4'>Job description</h2>
           <div className='rich-text' dangerouslySetInnerHTML={{__html:JobData.description}}></div>
-          <button className='bg-blue-600 px-8 text-white rounded mt-10'>Apply Now</button>
+          <button className='bg-blue-600 px-8 text-white rounded mt-10 cursor-pointer'>Apply Now</button>
+        </div>
+        {/* Right Section More Jobs */}
+        <div>
+          <h2>More jobs from {JobData.companyId.name}</h2>
+          {jobs.filter( job => job._id !== JobData._id && job.companyId._id === JobData.companyId._id).filter( job => true).slice(0,3).map((job,index)=> <JobCard key={index} job={job}/>)}
         </div>
       </div> 
 
