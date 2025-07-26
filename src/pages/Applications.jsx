@@ -32,8 +32,8 @@ const Applications = () => {
             </div>
           }
         </div>
-        <h2>Job Applied</h2>
-        <table>
+        <h2 className='text-xl font-semibold mb-4'>Job Applied</h2>
+        <table className='min-w-full bg-white border rounded-lg'>
           <thead>
             <tr>
               <th>Company</th>
