@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import { assets, jobsApplied } from '../assets/assets';
 import moment from 'moment';
+import Footer from '../components/Footer';
 const Applications = () => {
 
   const [isEdit, setIsEdit] = useState(false)
@@ -61,6 +62,7 @@ const Applications = () => {
           </tbody>
         </table>
       </div>
+      <Footer/>
     </>
   )
 }

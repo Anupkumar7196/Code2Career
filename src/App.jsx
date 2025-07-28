@@ -3,9 +3,11 @@ import {Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import ApplyJob from './pages/ApplyJob'
 import Applications from './pages/Applications'
+import RecruiterLogin from './components/RecruiterLogin'
 const App = () => {
   return (
     <div>
+      <RecruiterLogin/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/apply-job/:id' element={<ApplyJob/>} />
