@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
 
 const RecruiterLogin = () => {
     const [state, setState] = useState('Login')
@@ -7,6 +7,8 @@ const RecruiterLogin = () => {
     const [email, setEmail] = useState('')
 
     const [image, setImage] = useState(false)
+
+    const [isTextDataSubmited, setIsTextDataSubmited] = useState(false)
   return (
     <div>
       
@@ -14,4 +16,4 @@ const RecruiterLogin = () => {
   )
 }
 
-export default RecruiterLogin
+export default RecruiterLogin;
